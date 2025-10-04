@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Alexandria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body id="page-login">
+  <main class="auth-container">
+    <div class="auth-card card">
+      <h1>Entrar</h1>
+      <form id="login-form" method="POST" action="#">
+        <input id="email" name="email" type="email" placeholder="E-mail" autocomplete="email" required />
+        <input id="senha" name="senha" type="password" placeholder="Senha" autocomplete="current-password" required />
+        <button type="submit" class="btn btn--primary">Login</button>
+      </form>
+      <p class="auth-link">Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+    </div>
+  </main>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
