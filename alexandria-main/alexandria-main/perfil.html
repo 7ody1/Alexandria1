@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body id="page-perfil">
 
   <header class="main-header">
@@ -58,14 +60,22 @@
     <section class="profile-lists">
       <h2>📚 Lidos</h2>
       <div class="list-grid" id="lista-lidos"></div>
+      </section>
+      <section class ="profile-lists">
       <h2>🔥 Quero Ler</h2>
       <div class="list-grid" id="lista-quero"></div>
     </section>
-
-    <section class="profile-activity">
+    <section class="profile-lists">
       <h2>✍️ Minhas Resenhas</h2>
       <div id="resenhas-list" class="feed-container"></div>
     </section>
+    <section class="profile-lists">
+      <h2>💬 Meus Comentários</h2>
+      <div id="comentarios-list" class="feed-container"></div>
+    </section>
+    <section class="profile-lists">
+      <h2>❤️ Meus Favoritos</h2>
+      <div id="curtidas-list" class="feed-container"></div>
   </main>
 
   <footer class="main-footer">
@@ -85,16 +95,16 @@
       <form id="edit-profile-form">
         <label for="edit-nome">Nome</label>
         <input type="text" id="edit-nome" required>
-        
+
         <label for="edit-username">Username</label>
         <input type="text" id="edit-username" required>
-        
+
         <label for="edit-bio">Bio</label>
         <textarea id="edit-bio" rows="3"></textarea>
-        
+
         <label for="edit-foto">URL da Foto</label>
         <input type="url" id="edit-foto">
-        
+
         <button type="submit" class="btn btn--primary">Salvar Alterações</button>
       </form>
     </div>
@@ -102,4 +112,5 @@
 
   <script src="js/script.js" defer></script>
 </body>
+
 </html>
