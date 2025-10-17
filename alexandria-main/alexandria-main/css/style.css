@@ -670,3 +670,17 @@ body {
   align-items: center;
   gap: 1rem;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre a logo e o texto */
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.logo img {
+  height: 40px; /* Define a altura da sua logo */
+  width: auto;
+}
