@@ -1,17 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/header';
+import Header from './components/Header';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import './App.css';
+import './index.css';
 
 function App() {
   return (
     <Router>
       <div className="app-wrapper">
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* Futuramente adicionaremos /login e /explorar aqui */}
-        </Routes>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+          </Routes>
+        </main>
       </div>
     </Router>
   );
