@@ -1,16 +1,55 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    navigate('/explorar');
+  };
+
   return (
-    <div className="auth-container">
-      <div className="auth-card">
-        <h1>Entrar</h1>
-        <form>
-          <input type="email" placeholder="E-mail" />
-          <input type="password" placeholder="Senha" />
-          <button type="submit" className="btn-primary">Entrar</button>
+    <div className="login-page">
+      <div className="login-card">
+        <header className="login-header">
+          <h1>Alexandria</h1>
+          <p>Autenticação de Acesso</p>
+        </header>
+
+        <form onSubmit={handleLogin} className="login-form">
+          <div className="input-group">
+            <label>Identificador de Acesso</label>
+            <input 
+              type="email" 
+              placeholder="seu@email.com" 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="input-group">
+            <label>Chave de Segurança</label>
+            <input 
+              type="password" 
+              placeholder="••••••••" 
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn-login-submit">
+           Entrar
+          </button>
         </form>
-        <p className="auth-link">
-          Não tem conta? <a href="/register">Cadastre-se</a>
-        </p>
+
+        <footer className="login-footer">
+          <p>Não possui Conta? <span>Então se fode</span></p>
+        </footer>
       </div>
     </div>
   );

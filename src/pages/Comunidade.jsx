@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 
 const Comunidade = () => {
   const [xpWidth, setXpWidth] = useState('0%');
+  const [novoPost, setNovoPost] = useState('');
+  
+  const [atividades, setAtividades] = useState([
+    { id: 1, userId: "davi123", user: "Davi", action: "completou o desafio", book: "O Hobbit", time: "2h", reacoes: 12, comentarios: 4 },
+    { id: 2, userId: "ana_clara", user: "Ana", action: "favoritou", book: "Dom Casmurro", time: "5h", reacoes: 8, comentarios: 2 }
+  ]);
 
-  const atividades = [
-    { id: 1, userId: "davi123", user: "Davi", action: "completou o desafio", book: "O Hobbit", time: "2h" },
-    { id: 2, userId: "ana_clara", user: "Ana", action: "favoritou", book: "Dom Casmurro", time: "5h" }
-  ];
+  const [ranking, setRanking] = useState([
+    { id: 1, nome: "Davi", pontos: "2.450 xp", posicao: "01" },
+    { id: 2, nome: "Ana", pontos: "2.100 xp", posicao: "02" },
+    { id: 3, nome: "Igor", pontos: "1.850 xp", posicao: "03" }
+  ]);
 
   const topicos = [
     { id: 1, titulo: "Análise técnica: Tradução de '1984'", autor: "Igor", posts: 24 },
@@ -20,6 +27,24 @@ const Comunidade = () => {
     }, 100);
     return () => clearTimeout(timer);
   }, []);
+
+  const handlePublicar = () => {
+    if (novoPost.trim() === '') return;
+
+    const postObject = {
+      id: Date.now(),
+      userId: "davi123",
+      user: "Davi",
+      action: "postou:",
+      book: novoPost,
+      time: "agora",
+      reacoes: 0,
+      comentarios: 0
+    };
+
+    setAtividades([postObject, ...atividades]);
+    setNovoPost('');
+  };
 
   return (
     <div className="comunidade-page">
@@ -60,13 +85,19 @@ const Comunidade = () => {
 
         <main className="main-feed">
           <section className="create-post-v2">
-            <input type="text" placeholder="Compartilhe uma citação ou análise..." />
+            <input 
+              type="text" 
+              placeholder="Compartilhe uma citação ou análise..." 
+              value={novoPost}
+              onChange={(e) => setNovoPost(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handlePublicar()}
+            />
             <div className="post-actions">
               <div className="action-tags">
                 <span className="tag-sutil">Anexo</span>
                 <span className="tag-sutil">Referência</span>
               </div>
-              <button className="btn-send">Publicar</button>
+              <button className="btn-send" onClick={handlePublicar}>Publicar</button>
             </div>
           </section>
 
@@ -84,8 +115,8 @@ const Comunidade = () => {
                   {act.action} <span className="highlight">{act.book}</span>
                 </p>
                 <div className="card-footer">
-                  <span className="interact-link">Relevante (12)</span>
-                  <span className="interact-link">Comentários (4)</span>
+                  <span className="interact-link">Relevante ({act.reacoes})</span>
+                  <span className="interact-link">Comentários ({act.comentarios})</span>
                 </div>
               </div>
             ))}
@@ -105,9 +136,14 @@ const Comunidade = () => {
 
           <div className="interaction-box ranking">
             <h3>Ranking de Contribuição</h3>
-            <div className="rank-row"><span>01</span> Davi</div>
-            <div className="rank-row"><span>02</span> Ana</div>
-            <div className="rank-row"><span>03</span> Igor</div>
+            {ranking.map((user) => (
+              <div key={user.id} className="rank-row">
+                <span>{user.posicao}</span> {user.nome} 
+                <small style={{ color: 'var(--slate)', fontSize: '0.7rem', marginLeft: '10px' }}>
+                  {user.pontos}
+                </small>
+              </div>
+            ))}
           </div>
         </aside>
       </div>
