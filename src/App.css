@@ -1,20 +1,80 @@
+/* Global Styles */
 .main-header {
   width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 5%;
-  height: 80px;
-  background-color: var(--dark-navy);
-  border-bottom: 1px solid var(--light-navy);
+  background-color: rgba(10, 25, 47, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 .main-nav {
   display: flex;
   gap: 30px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--light-slate);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover {
+  color: var(--cyan);
+}
+
+.header-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-bar input {
+  background-color: var(--light-navy);
+  border: 1px solid var(--light-navy);
+  border-radius: 20px;
+  padding: 8px 15px;
+  color: var(--white);
+  outline: none;
+  transition: border-color 0.3s ease, width 0.3s ease;
+  width: 200px;
+}
+
+.search-bar input:focus {
+  border-color: var(--cyan);
+  width: 250px;
+}
+
+.btn-login {
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: rgba(100, 255, 218, 0.1);
 }
 
 .hero {
@@ -26,14 +86,15 @@
   justify-content: center;
   text-align: center;
   padding: 40px 5%;
-  background: linear-gradient(rgba(10,25,47,0.7), rgba(10,25,47,1));
+  background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 1));
 }
 
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem); 
+  font-size: clamp(2rem, 5vw, 4rem);
   color: var(--white);
   margin-bottom: 20px;
 }
+
 .section {
   padding: 40px 5%;
   width: 100%;
@@ -48,7 +109,7 @@
 .carousel {
   display: flex;
   gap: 20px;
-  overflow-x: auto; 
+  overflow-x: auto;
   padding-bottom: 20px;
   scrollbar-width: thin;
   scrollbar-color: var(--cyan) var(--navy);
@@ -69,7 +130,7 @@
 }
 
 .book-item {
-  flex: 0 0 200px; 
+  flex: 0 0 200px;
   background-color: var(--navy);
   border-radius: 8px;
   overflow: hidden;
@@ -99,10 +160,163 @@
   margin-bottom: 5px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
 
 .book-info p {
+  font-size: 0.9rem;
+  color: var(--slate);
+}
+
+.explorar-container {
+  padding: 60px 5%;
+}
+
+.explorar-header {
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* pagina de explorar */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+
+.book-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.book-card-inner {
+  background: var(--light-navy);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 100%;
+}
+
+.book-card-inner img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.book-card-content {
+  padding: 15px;
+}
+
+.book-card:hover .book-card-inner {
+  transform: translateY(-10px);
+  border-color: var(--cyan);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.book-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-label {
+  font-size: 0.7rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/*Livros do Explorar*/
+.explorar-page {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.page-title p {
+  color: var(--slate);
+  margin-bottom: 30px;
+}
+
+.filter-section {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--light-slate);
+  color: var(--light-slate);
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--cyan);
+  border-color: var(--cyan);
+  color: var(--navy);
+  font-weight: bold;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 30px;
+}
+
+.book-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.book-card-inner {
+  background: var(--light-navy);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(100, 255, 218, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.book-card:hover .book-card-inner {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  border-color: var(--cyan);
+}
+
+.book-cover {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+}
+
+.book-card-info {
+  padding: 15px;
+}
+
+.book-card-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--white);
+}
+
+.book-card-info p {
   font-size: 0.9rem;
   color: var(--slate);
 }
