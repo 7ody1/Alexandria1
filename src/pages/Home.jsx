@@ -32,15 +32,15 @@ const Home = () => {
             </div>
           ))}
           
-         <div className="book-item">
+      <div className="book-item">
   <img 
     src="https://i0.wp.com/gay.blog.br/wp-content/uploads/2023/07/Jogador-Vampeta-pelado-na-revista-g-magazine-11.jpg?w=650&ssl=1" 
-    alt="Vampeta" 
+    alt="Dom Casmurro" 
     className="book-cover" 
   />
   <div className="book-info">
     <h3>Revista do Vampeta</h3>
-    <p>Seleção do brasil</p>
+    <p>Vampeta é o cara</p>
   </div>
 </div>
         </div>

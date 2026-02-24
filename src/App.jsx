@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Explorar from "./pages/Explorar";
 import Comunidade from "./pages/Comunidade";
+import './App.css';
 
 function App() {
   return (
