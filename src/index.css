@@ -1,11 +1,15 @@
 :root {
-  --dark-navy: #0a192f;
-  --navy: #112240;
-  --light-navy: #1d2d44;
-  --slate: #8892b0;
-  --light-slate: #ccd6f6;
-  --cyan: #64ffda;
-  --white: #fff;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  background-color: #0a192f;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -16,14 +20,19 @@
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: var(--dark-navy);
-  color: var(--light-slate);
+  display: flex;
+  place-items: baseline;
+  min-width: 320px;
   min-height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
+  background-color: #0a192f;
 }
 
-#root {
-  width: 100%;
+a {
+  font-weight: 500;
+  color: #64ffda;
+  text-decoration: inherit;
+}
+
+button {
+  font-family: inherit;
 }
