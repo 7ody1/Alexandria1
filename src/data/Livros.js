@@ -23,7 +23,7 @@ export const biblioteca = [
   titulo: "Dom Casmurro",
   autor: "Machado de Assis",
   capa: "https://covers.openlibrary.org/b/id/10594758-L.jpg",
-  sinopse: "Bentinho narra sua própria história de amor com Capitu, marcada por ciúmes e traição.",
+  sinopse: "Bentinho narra sua própria história de amor, marcada por ciúmes e traição.",
   categoria: "Psicológico",
   rating: "⭐⭐⭐⭐⭐"
 }
