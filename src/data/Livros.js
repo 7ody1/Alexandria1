@@ -24,7 +24,7 @@ export const biblioteca = [
   autor: "Machado de Assis",
   capa: "https://covers.openlibrary.org/b/id/10594758-L.jpg",
   sinopse: "Bentinho narra sua própria história de amor com Capitu, marcada por ciúmes e dúvidas sobre uma possível traição.",
-  categoria: "Romance Psicológico",
+  categoria: "Psicológico",
   rating: "⭐⭐⭐⭐⭐"
 }
 ];
