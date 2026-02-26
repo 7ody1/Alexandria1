@@ -48,7 +48,7 @@ const Login = () => {
         </form>
 
         <footer className="login-footer">
-          <p>Não possui Conta? <span>Então se fode</span></p>
+          <p>Não possui Conta? <span> Cadastrar</span></p>
         </footer>
       </div>
     </div>
