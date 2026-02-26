@@ -34,7 +34,6 @@ const Home = () => {
           
       <div className="book-item">
   <img 
-    src="https://i0.wp.com/gay.blog.br/wp-content/uploads/2023/07/Jogador-Vampeta-pelado-na-revista-g-magazine-11.jpg?w=650&ssl=1" 
     alt="Dom Casmurro" 
     className="book-cover" 
   />
