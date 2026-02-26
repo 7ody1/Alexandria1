@@ -15,7 +15,7 @@ export const biblioteca = [
     capa: "https://m.media-amazon.com/images/I/819js3EQwbL.jpg",
     sinopse: "Winston Smith vive em uma sociedade controlada pelo Grande Irmão.",
     categoria: "Distopia",
-    rating: "⭐⭐⭐⭐"
+    rating: "⭐⭐⭐⭐⭐"
   },
 
   {
