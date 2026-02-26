@@ -16,5 +16,15 @@ export const biblioteca = [
     sinopse: "Winston Smith vive em uma sociedade controlada pelo Grande Irmão.",
     categoria: "Distopia",
     rating: "⭐⭐⭐⭐"
-  }
+  },
+
+  {
+  id: "dom-casmurro",
+  titulo: "Dom Casmurro",
+  autor: "Machado de Assis",
+  capa: "https://covers.openlibrary.org/b/id/10594758-L.jpg",
+  sinopse: "Bentinho narra sua própria história de amor com Capitu, marcada por ciúmes e dúvidas sobre uma possível traição.",
+  categoria: "Romance Psicológico",
+  rating: "⭐⭐⭐⭐⭐"
+}
 ];
