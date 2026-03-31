@@ -37,7 +37,7 @@ const Home = () => {
           </p>
 
           <div className="hero-actions">
-            <button className="btn-primary" onClick={() => navigate('/login')}>
+            <button className="btn-primary" onClick={() => navigate('/cadastro')}>
               Cadastrar
             </button>
           </div>
@@ -147,7 +147,7 @@ const Home = () => {
         <div className="cta-content">
           <h2>A sua próxima grande história começa aqui.</h2>
           <p>Crie sua conta hoje e ganhe acesso a listas exclusivas e recomendações personalizadas.</p>
-          <button className="btn-primary large" onClick={() => navigate('/login')}>
+          <button className="btn-primary large" onClick={() => navigate('/cadastro')}>
             Começar Gratuitamente
           </button>
         </div>

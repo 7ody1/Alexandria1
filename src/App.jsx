@@ -3,6 +3,7 @@ import HeaderX from "./components/HeaderX";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Cadastro from "./pages/Cadastro";
 import Explorar from "./pages/Explorar";
 import Comunidade from "./pages/Comunidade";
 import './App.css';
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/explorar" element={<Explorar />} />
         <Route path="/comunidade" element={<Comunidade />} />
       </Routes>

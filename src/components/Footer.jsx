@@ -4,7 +4,8 @@ import { useLocation } from 'react-router-dom';
 const Footer = () => {
   const location = useLocation();
 
-  if (location.pathname === '/explorar' || location.pathname === '/comunidade') {
+  const hiddenRoutes = ['/explorar', '/comunidade', '/login', '/cadastro'];
+  if (hiddenRoutes.includes(location.pathname)) {
     return null;
   }
 

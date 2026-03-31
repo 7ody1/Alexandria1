@@ -21,7 +21,7 @@ const Login = () => {
 
         <form onSubmit={handleLogin} className="login-form">
           <div className="input-group">
-            <label>Identificador de Acesso</label>
+            <label>Email</label>
             <input 
               type="email" 
               placeholder="seu@email.com" 
@@ -32,7 +32,7 @@ const Login = () => {
           </div>
 
           <div className="input-group">
-            <label>Chave de Segurança</label>
+            <label>Senha</label>
             <input 
               type="password" 
               placeholder="••••••••" 
@@ -48,7 +48,7 @@ const Login = () => {
         </form>
 
         <footer className="login-footer">
-          <p>Não possui Conta? <span> Cadastrar</span></p>
+          <p>Não possui Conta? <span onClick={() => navigate('/cadastro')} style={{cursor: 'pointer'}}>Cadastrar</span></p>
         </footer>
       </div>
     </div>
