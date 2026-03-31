@@ -174,7 +174,8 @@
 }
 
 .category-item.active {
-  background-color: rgba(99, 255, 219, 0.15); /* lighter tone of #63ffdb */
+  background-color: rgba(99, 255, 219, 0.15);
+  /* lighter tone of #63ffdb */
   color: #fff;
 }
 

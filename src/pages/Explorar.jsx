@@ -9,13 +9,13 @@ const Explorar = () => {
 
   const livrosFiltrados = biblioteca.filter(livro => {
     const matchCategoria = filtro === 'Todos' || livro.categoria === filtro || (filtro === 'Sci-Fi' && livro.categoria === 'Ficção Científica');
-    const matchBusca = livro.titulo.toLowerCase().includes(busca.toLowerCase()) || 
-                       livro.autor.toLowerCase().includes(busca.toLowerCase());
+    const matchBusca = livro.titulo.toLowerCase().includes(busca.toLowerCase()) ||
+      livro.autor.toLowerCase().includes(busca.toLowerCase());
     return matchCategoria && matchBusca;
   });
 
   const categorias = ['Todos', 'Clássicos', 'Fantasia', 'Romance', 'Distopia', 'Psicológico', 'Sci-Fi'];
-  
+
   // Para os destaques, pegamos os 4 primeiros
   const destaques = biblioteca.slice(0, 4);
 
@@ -29,17 +29,17 @@ const Explorar = () => {
           mergulhe em milhares de histórias. De clássicos atemporais a novos
           mundos inexplorados, sua próxima aventura começa aqui.
         </p>
-        
+
         <div className="search-box-container">
-          <input 
-            type="text" 
-            placeholder="O que você quer buscar hoje ? Busque por título, autor, gênero..." 
+          <input
+            type="text"
+            placeholder="O que você quer buscar hoje ? Busque por título, autor, gênero..."
             className="search-input-large"
             value={busca}
             onChange={(e) => setBusca(e.target.value)}
           />
         </div>
-        
+
         <div className="hero-chips">
           <span className="chip">+ 5000 Obras</span>
           <span className="chip">+ 20 Gêneros</span>
@@ -49,7 +49,7 @@ const Explorar = () => {
 
       {/* Main Content */}
       <div className="explorar-main-content">
-        
+
         {/* Sidebar */}
         <aside className="explorar-sidebar">
           <div className="sidebar-card">
@@ -58,7 +58,7 @@ const Explorar = () => {
             <ul className="categories-list">
               {categorias.map(cat => (
                 <li key={cat}>
-                  <button 
+                  <button
                     className={`category-item ${filtro === cat ? 'active' : ''}`}
                     onClick={() => setFiltro(cat)}
                   >
@@ -72,7 +72,7 @@ const Explorar = () => {
 
         {/* Content Right */}
         <div className="explorar-content-right">
-          
+
           <section className="destaques-semana">
             <h2 className="section-title">Em Destaque essa semana</h2>
             <div className="destaques-grid">
@@ -95,17 +95,17 @@ const Explorar = () => {
 
       <div className="explorar-bottom-content">
         <section className="acervo-completo">
-           <h2 className="section-title">Explore o Acervo Completo</h2>
-           <div className="acervo-grid">
-              {livrosFiltrados.map(livro => (
-                <Link to={`/livro/${livro.id}`} key={livro.id} className="acervo-book-card">
-                  <img src={livro.capa} alt={livro.titulo} />
-                  <div className="book-rating">
-                    <span style={{ color: '#fbbf24', fontSize: '1.1rem', letterSpacing: '4px' }}>★★★★★</span>
-                  </div>
-                </Link>
-              ))}
-           </div>
+          <h2 className="section-title">Explore o Acervo Completo</h2>
+          <div className="acervo-grid">
+            {livrosFiltrados.map(livro => (
+              <Link to={`/livro/${livro.id}`} key={livro.id} className="acervo-book-card">
+                <img src={livro.capa} alt={livro.titulo} />
+                <div className="book-rating">
+                  <span style={{ color: '#fbbf24', fontSize: '1.1rem', letterSpacing: '4px' }}>★★★★★</span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </section>
       </div>
     </div>
