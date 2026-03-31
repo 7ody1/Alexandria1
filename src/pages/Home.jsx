@@ -146,7 +146,7 @@ const Home = () => {
       <section className="cta-banner">
         <div className="cta-content">
           <h2>A sua próxima grande história começa aqui.</h2>
-          <p>Crie sua conta hoje e ganhe acesso a listas exclusivas e recomendações personalizadas por IA.</p>
+          <p>Crie sua conta hoje e ganhe acesso a listas exclusivas e recomendações personalizadas.</p>
           <button className="btn-primary large" onClick={() => navigate('/login')}>
             Começar Gratuitamente
           </button>
