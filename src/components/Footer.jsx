@@ -1,6 +1,13 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
+
+  if (location.pathname === '/explorar') {
+    return null;
+  }
+
   return (
     <footer className="main-footer">
       <div className="footer-top-border"></div>
