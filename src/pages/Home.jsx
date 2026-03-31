@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { biblioteca } from '../data/Livros';
 import '../App.css';
@@ -10,6 +10,15 @@ const Home = () => {
   const lancamentos = biblioteca.slice(5, 10);
   const sugeridos = biblioteca.sort(() => 0.5 - Math.random()).slice(0, 5);
   const leituraDoDia = biblioteca[0]; // Exemplo de livro em destaque central
+
+  const carousel1Ref = useRef(null);
+  const carousel2Ref = useRef(null);
+
+  const scrollCarousel = (ref, offset) => {
+    if (ref && ref.current) {
+      ref.current.scrollBy({ left: offset, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="home-container">
@@ -57,19 +66,23 @@ const Home = () => {
           <h2>Tendências da Semana</h2>
           <span className="view-all" onClick={() => navigate('/explorar')}>Explorar Mais</span>
         </div>
-        <div className="carousel">
-          {destaques.map((livro) => (
-            <div className="book-item" key={livro.id} onClick={() => navigate(`/livro/${livro.id}`)}>
-              <div className="book-card-inner">
-                <img src={livro.capa} alt={livro.titulo} className="book-cover" />
-                <div className="book-info">
-                  <h3>{livro.titulo}</h3>
-                  <p>{livro.autor}</p>
-                  <span className="category-tag">{livro.categoria}</span>
+        <div className="carousel-container">
+          <button className="carousel-btn prev" onClick={() => scrollCarousel(carousel1Ref, -300)}>&#10094;</button>
+          <div className="carousel" ref={carousel1Ref}>
+            {destaques.map((livro) => (
+              <div className="book-item" key={livro.id} onClick={() => navigate(`/livro/${livro.id}`)}>
+                <div className="book-card-inner">
+                  <img src={livro.capa} alt={livro.titulo} className="book-cover" />
+                  <div className="book-info">
+                    <h3>{livro.titulo}</h3>
+                    <p>{livro.autor}</p>
+                    <span className="category-tag">{livro.categoria}</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button className="carousel-btn next" onClick={() => scrollCarousel(carousel1Ref, 300)}>&#10095;</button>
         </div>
       </section>
 
@@ -110,18 +123,22 @@ const Home = () => {
         <div className="section-header">
           <h2>Recém Adicionados</h2>
         </div>
-        <div className="carousel">
-          {lancamentos.map((livro) => (
-            <div className="book-item" key={livro.id} onClick={() => navigate(`/livro/${livro.id}`)}>
-              <div className="book-card-inner">
-                <img src={livro.capa} alt={livro.titulo} className="book-cover" />
-                <div className="book-info">
-                  <h3>{livro.titulo}</h3>
-                  <p>{livro.autor}</p>
+        <div className="carousel-container">
+          <button className="carousel-btn prev" onClick={() => scrollCarousel(carousel2Ref, -300)}>&#10094;</button>
+          <div className="carousel" ref={carousel2Ref}>
+            {lancamentos.map((livro) => (
+              <div className="book-item" key={livro.id} onClick={() => navigate(`/livro/${livro.id}`)}>
+                <div className="book-card-inner">
+                  <img src={livro.capa} alt={livro.titulo} className="book-cover" />
+                  <div className="book-info">
+                    <h3>{livro.titulo}</h3>
+                    <p>{livro.autor}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <button className="carousel-btn next" onClick={() => scrollCarousel(carousel2Ref, 300)}>&#10095;</button>
         </div>
       </section>
 

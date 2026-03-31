@@ -882,75 +882,142 @@ body {
 }
 
 .main-footer {
-  background: var(--navy);
-  padding: 60px 5% 20px;
-  border-top: 1px solid rgba(100, 255, 218, 0.1);
-  margin-top: 50px;
+  position: relative;
+  background: linear-gradient(to bottom, var(--navy) 0%, #060e17 100%);
+  padding: 80px 5% 30px;
+  margin-top: 80px;
   width: 100%;
+}
+
+.footer-top-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0.3;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: 0 auto 60px;
+}
+
+.footer-brand {
+  max-width: 350px;
 }
 
 .logo-text {
   color: var(--cyan);
   font-weight: bold;
-  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.footer-brand p {
+.footer-slogan {
   color: var(--slate);
-  font-size: 0.8rem;
-  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 20px 0;
 }
 
-.footer-links {
+.social-links {
   display: flex;
-  gap: 60px;
+  gap: 15px;
+}
+
+.social-icon {
+  color: var(--cyan);
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: rgba(100, 255, 218, 0.1);
+  border-color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.footer-links-wrapper {
+  display: flex;
+  gap: 80px;
+  flex-wrap: wrap;
 }
 
 .link-group h4 {
   color: var(--white);
-  font-size: 0.9rem;
-  margin-bottom: 15px;
+  font-size: 1rem;
+  margin-bottom: 25px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
 .link-group a {
   display: block;
   color: var(--slate);
   text-decoration: none;
-  font-size: 0.85rem;
-  margin-bottom: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
   transition: 0.3s;
+  position: relative;
+  width: max-content;
 }
 
 .link-group a:hover {
   color: var(--cyan);
+  padding-left: 5px;
 }
 
 .footer-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 20px;
-  border-top: 1px solid rgba(100, 255, 218, 0.05);
+  padding-top: 30px;
+  border-top: 1px solid rgba(100, 255, 218, 0.1);
   color: var(--slate);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
 }
 
-.terminal-text {
-  font-family: 'Courier New', Courier, monospace;
-  color: var(--cyan);
-  opacity: 0.7;
+.system-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: inherit;
+  color: var(--slate);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--cyan);
+  animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .footer-links-wrapper {
+    gap: 40px;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  .footer-content {
+    flex-direction: column;
+  }
 }
 
 img {
@@ -981,7 +1048,48 @@ img {
 
 
 
-/* Ajuste no Layout de Seções */
+/* Ajuste no Layout de Seções e Carousel */
+.carousel-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+
+.carousel-btn {
+  background: rgba(10, 25, 47, 0.9);
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-btn:hover {
+  background: var(--cyan);
+  color: var(--navy);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn.prev {
+  left: -22px;
+}
+
+.carousel-btn.next {
+  right: -22px;
+}
+
 .carousel {
   display: flex;
   gap: 25px;
@@ -991,6 +1099,8 @@ img {
   /* Firefox */
   -ms-overflow-style: none;
   /* IE/Edge */
+  scroll-behavior: smooth;
+  max-width: 100%;
 }
 
 .carousel::-webkit-scrollbar {
