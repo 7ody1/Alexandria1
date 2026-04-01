@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../components/common/Button';
+import InputField from '../components/common/InputField';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -31,20 +33,21 @@ const Login = () => {
             />
           </div>
 
-          <div className="input-group">
-            <label>Senha</label>
-            <input 
-              type="password" 
-              placeholder="••••••••" 
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              required
-            />
-          </div>
+          <InputField 
+            label="Senha"
+            type="password" 
+            placeholder="••••••••" 
+            value={senha}
+            onChange={(e) => setSenha(e.target.value)}
+            required
+          />
 
-          <button type="submit" className="btn-login-submit">
-           Entrar
-          </button>
+          <Button 
+            type="submit" 
+            variant="primary" 
+          >
+            Entrar
+          </Button>
         </form>
 
         <footer className="login-footer">

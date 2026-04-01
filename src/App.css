@@ -1173,3 +1173,34 @@ img {
     padding: 30px;
   }
 }
+
+/* Estilos para os componentes padronizados */
+.btn-base {
+  width: 100%;
+  padding: 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  font-family: inherit;
+}
+
+.primary {
+  background: transparent;
+  border: 1px solid var(--cyan);
+  color: var(--cyan);
+}
+
+.primary:hover {
+  background: rgba(100, 255, 218, 0.1);
+  box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+}
+
+.secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
